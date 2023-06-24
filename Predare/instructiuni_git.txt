@@ -1,1 +1,7 @@
 git init -  am initializat repo local
+git add --all - am adaugat fisierele in repo
+git commit -m 'primul mesaj' -am salvat fisierele
+git remote add origin https://github.com/constantinus345/sda_51 - am legat repo local de repo github sda_51
+git checkout -b "code_1" - am creat branch/creanga
+git push
+git push --set-upstream origin code_1
