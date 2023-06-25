@@ -1,0 +1,9 @@
+class - contine logica pentru creare de obiecte (de exemplu : contactele din telefon)
+Obiect - o instanta a unei clase, de exemplu Ion este un obiect al clasei Om
+Atribut - variabila care stocheaza datele obiectului
+Metode - functiile clasei, transforma/ proceseaza datele clasei
+Self - parametru special care face referire la instantele clasei, la obiectele ulterior individuale
+Mostenire/ inheritance - procesul prin care o clasa mosteneste atributele si metodele altei clase
+Constructor - modul in care ne construim obiecte, ex: robo_osptar_1 = AngajatRobot("Sony", 8, 30000, "Ospatar", "Willy")
+
+Functii - ansmblu de instructiuni cu sau fara parametri, cu sau fara valoare returnata
