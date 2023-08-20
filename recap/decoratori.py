@@ -67,3 +67,38 @@ def ceva_functie():
     print("doi")
 
 ceva_functie()
+
+#Decorator de retry- daca o functie nu da un rezultat, mai incercam
+
+import time
+
+def reincercare(func):
+    def wrapper(*args, **kwargs):
+        for i in range(3):
+            try:
+                result = func(*args, **kwargs)
+                return result
+            except Exception as e:
+                print(f"Error encountered-> {e}. Retry in 5 secunde...")
+                time.sleep(5)
+        raise Exception("Functia nu s-a executat nici dupa 3 reincercari")
+    return wrapper
+
+@reincercare
+def f_1():
+    if 4 < 5:
+        raise Exception("Exceptie banala")
+    return "Succes"
+
+print(f_1())
+
+#Accesez o pagina web
+import requests #pentru a accesa pagini web
+
+@reincercare
+def acceseaza_site(website_url):
+    raspuns = requests.get(website_url)
+    return raspuns.content
+
+print(acceseaza_site("www.blablafdssdhs.ro"))
+print(acceseaza_site("https://en.wikipedia.org/wiki/Klaus_Iohannis"))
