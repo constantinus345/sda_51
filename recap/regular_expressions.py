@@ -9,7 +9,7 @@ Afara sunt 34 grade Celsius.
 numerele = re.findall(r"\d+", text)
 print(numerele)
 
-preturi = ["Ciocolata 10.87", "Vodka 19.30", "Branza 17.56"]
+preturi = ["Ciocolata 10.87 2.87 0.1", "Vodka 19.30", "Branza 17.56"]
 pattern_cautat = r'\d+\.\d+'
 #\d - matches digits
 #+ - one or more occurences
@@ -49,3 +49,25 @@ text = "Ion, Elena; Ana-Andrei"
 split_pattern = r",|;|-"
 lista_split = re.split(split_pattern, text)
 print(lista_split) #despart elementele textului fie dupa , sau ; sau -
+
+import re
+text = """
+Aici Sunt Cuvinte Cu Litere Mari.
+iar aici sunt cuvinte cu litere mici
+"""
+pattern = r'\b[A-Z][a-z]*\b'
+cuvinte_cu_lit_mare = re.findall(pattern, text)
+print("Cuvintele care incep cu litere mari:")
+for cuvant in cuvinte_cu_lit_mare:
+    print(cuvant)
+
+def patrat_cub(x):
+    #returneaza patratul daca numarul e par, in caz contrar returneaza cubul numarului
+    if x % 2 == 0:
+        return x**2
+    #else - linie redundanta/nu e necesara.
+    return x**3
+
+print(patrat_cub(20))
+print(patrat_cub(21))
+
