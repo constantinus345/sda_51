@@ -119,20 +119,59 @@ def merge_sort(lista):
     lista_dreaptax = merge_sort(lista_dreaptax)
     return mergex(lista_stangax, lista_dreaptax)
 
-def merge_sort_fara_recursie(lista):
-    mid = len(lista) // 2
-    lista_stangax = lista[:mid]
-    lista_dreaptax = lista[mid:]
 
 
 
-lista_haotica_1 = gen_lista_random(3)
+
+
+#selection sort
+
+def selection_sort(lista):
+    counter = 0
+    #traversam lista
+    for i in range(len(lista)):
+        initial_i = i
+        #traversam lista ramasa dupa i
+        for j in range(i+1, len(lista)):
+            if lista[j] < lista[initial_i]:
+                initial_i = j
+                counter += 1
+        lista[i], lista[initial_i] =  lista[initial_i], lista[i] #swap intre elemente
+    print(f"S-au efectuat {counter} pt selection_sort")
+    return lista
+
+lista_haotica_1 = gen_lista_random(80)
 lista_haotica_2 = deepcopy(lista_haotica_1)
 lista_haotica_3 = deepcopy(lista_haotica_1)
 # print(lista_haotica)
 print(lista_haotica_1 is lista_haotica_2)
 print(bubble_sort(lista_haotica_1))
 print(insertion_sort(lista_haotica_2))
+print(selection_sort(lista_haotica_3))
 
-lista_sortata_merge = merge_sort(lista_haotica_3)
-print(lista_sortata_merge)
+#quicksort algo
+def quicksorting(lista):
+    if len(lista)<= 1:
+        return lista
+
+    mijloc = lista[ len(lista)//2 ] #elementul de la mijlocul listei
+    #len(lista)//2 - indexul de mijloc al listei
+
+    stanga = [x for x in lista if x < mijloc ]
+    dreapta = [x for x in lista if x > mijloc]
+    mijloc = [x for x in lista if x == mijloc ]
+
+    return quicksorting(stanga) + mijloc + quicksorting(dreapta)
+
+lista_haotica_1 = gen_lista_random(81)
+lista_haotica_2 = deepcopy(lista_haotica_1)
+lista_haotica_3 = deepcopy(lista_haotica_1)
+lista_haotica_4 = deepcopy(lista_haotica_1)
+# print(lista_haotica)
+print(lista_haotica_1 is lista_haotica_2)
+print(bubble_sort(lista_haotica_1))
+print(insertion_sort(lista_haotica_2))
+print(selection_sort(lista_haotica_3))
+
+lista_quicksorted = quicksorting(lista_haotica_4)
+print(lista_quicksorted)
