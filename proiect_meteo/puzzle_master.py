@@ -1,6 +1,5 @@
 import asyncio
 
-
 from vremea import getweather
 from telegram_x import executare_mesaj_telegram
 from openai_stuff import text_imbracaminte
