@@ -2,10 +2,14 @@
 #ca sa analizez ulterior performanta programului meu
 
 import logging
+from datetime import datetime
+
+today = datetime.now().strftime("%Y-%m-%d")
+print(f"Azi este data - {today}")
 
 #Creez o configurare pentru raportul de executare a codului
 folder_logs = "B:/pyx/SDA/sda_51/Logs"
-logging.basicConfig(filename=f"{folder_logs}/loguri.log",
+logging.basicConfig(filename=f"{folder_logs}/loguri_{today}.log",
                     format="%(asctime)s -- %(levelname)s -- %(message)s ",
                     filemode="a")
 #Creez un obiect de manipulare a log-ului
