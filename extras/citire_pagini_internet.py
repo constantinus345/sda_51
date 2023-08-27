@@ -35,5 +35,6 @@ async def executa_citirea():
     for titlu in titlurile:
         print(titlu)
 
+#Facem 7 reuqest-uri la serverul wikipedia in mod asincron
 if __name__ == "__main__":
     asyncio.run(executa_citirea())
