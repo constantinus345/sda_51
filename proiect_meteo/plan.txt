@@ -1,0 +1,4 @@
+1. Gasesc un serviciu API care imi spune vremea
+2. Setez serviciul de mesagerie telegram
+3. Folosesc serciul OPENAI
+
